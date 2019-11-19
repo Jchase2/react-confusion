@@ -6,4 +6,6 @@ Created using create-react-app and reactstrap, primarily.
 
 ## What course? 
 
-<a href="https://www.coursera.org/specializations/full-stack-mobile-app-development">Hong Kong University / Coursea Full Stack Mobile App Development Specialization </a>
+<a href="https://www.coursera.org/specializations/full-stack-mobile-app-development"> Full Stack Web and Multiplatform Mobile App Development Specialization from Hong Kong University of Technology and Science hosted by Coursera </a>
+
+Specifically: <a href="https://www.coursera.org/learn/front-end-react">Course 2: Front-End Web Development with React</a>
