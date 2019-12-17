@@ -61,9 +61,9 @@ class CommentForm extends React.Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Label htmlFor="name" md={2}>Name</Label>
+                                <Label htmlFor="author" md={2}>Name</Label>
                                 <Col md={12}>
-                                    <Control.text model=".name" id="name" name="name"
+                                    <Control.text model=".author" id="author" name="author"
                                         placeholder="Your Name"
                                         className="form-control"
                                         validators={{
@@ -72,7 +72,7 @@ class CommentForm extends React.Component {
                                     />
                                     <Errors
                                         className="text-danger"
-                                        model=".name"
+                                        model=".author"
                                         messages={{
                                             minLength: 'Must be greater than 2 characters',
                                             maxLength: 'Must be 15 characters or less'
@@ -113,11 +113,12 @@ function RenderComments({ comments, addComment, dishId }) {
                         <li key={comment.id}>
                             <p>{comment.comment}</p>
                             <p>-- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p>
+                            {console.log("The Author: " + comment.author)}
                         </li>
                     )
                 })}
             </ul>
-            <CommentForm dishId={dishId} addComment={addComment}/>
+            <CommentForm dishId={dishId} addComment={addComment} />
         </div>
     )
 }
@@ -143,9 +144,10 @@ const DishDetail = (props) => {
                         <RenderDish dish={props.dish} />
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <RenderComments comments={props.comments} 
-                        addComment={props.addComment}
-                        dishId={props.dish.id}/>
+                        <RenderComments comments={props.comments}
+                            addComment={props.addComment}
+                            dishId={props.dish.id}
+                        />
                     </div>
                 </div>
             </div>
