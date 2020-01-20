@@ -7,9 +7,7 @@ import {
 import { Loading } from './LoadingComponent';
 import { baseURL } from '../shared/baseURL'
 
-
 function RenderCard({item, isLoading, errMess}) {
-    
     if (isLoading) {
         return(
                 <Loading />
@@ -31,10 +29,10 @@ function RenderCard({item, isLoading, errMess}) {
                 </CardBody>
             </Card>
         );
-
 }
 
 function Home(props) {
+    console.log("props.leadersLoading from home component: " + props.leadersLoading);
     return (
         <div className="container">
             <div className="row align-items-start">
@@ -49,7 +47,9 @@ function Home(props) {
                     errMess={props.promosErrMess}/>
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.leader} />
+                    <RenderCard item={props.leader} 
+                    isLoading={props.leadersLoading}
+                    errMess={props.leadersErrMess}/>
                 </div>
             </div>
         </div>
